@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library Book Request</title>
+</head>
+<body>
+  <h1>Library Book Request</h1>
+  <p>Complete the sample form using fictional information.</p>
+  <form action="#" method="get">
+    <p><label for="book">Book title</label><br>
+    <input id="book" name="book" type="text" required></p>
+    <p><label for="email">Contact email</label><br>
+    <input id="email" name="email" type="email" required></p>
+    <fieldset>
+      <legend>Preferred collection point</legend>
+      <label><input type="radio" name="point" value="main" checked> Main library</label>
+      <label><input type="radio" name="point" value="branch"> Branch library</label>
+    </fieldset>
+    <p><label for="note">Additional note (optional)</label><br>
+    <textarea id="note" name="note" rows="3"></textarea></p>
+    <button type="submit">Request book</button>
+  </form>
+<p><small>Practice example: form submissions are not processed or stored.</small></p>
+</body>
+</html>

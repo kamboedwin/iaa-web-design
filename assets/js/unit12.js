@@ -1,0 +1,14 @@
+(function(){'use strict';
+ const el=document.querySelector('[data-u12-chooser]');
+ if(el){const situation=el.querySelector('#u12-scenario'),choice=el.querySelector('#u12-choice'),out=el.querySelector('[data-u12-result]');
+ const cases={hours:['static','Static hosting is a sensible choice for public hours, rules and contact information. There is no need for a confidential records database.'],notices:['cms','A managed CMS is a sensible starting point when authorised staff frequently update public notices; access roles and maintenance remain important.'],restricted:['app','Restricted personnel records need a secure specialist system with enforced authorisation, audit controls and approved institutional hosting.'],portfolio:['static','Static hosting suits an HTML/CSS learning project with no sensitive data.'],catalogue:['app','Live book availability usually needs an integrated library system or related application and database; a static homepage can link to it.']};
+ function show(){const [answer,reason]=cases[situation.value];const ok=choice.value===answer;out.replaceChildren();let h=document.createElement('p');let b=document.createElement('strong');b.textContent=ok?'Suitable starting choice.':'Consider a different starting choice.';h.append(b);let p=document.createElement('p');p.textContent=reason;out.append(h,p);}
+ el.querySelector('[data-u12-check]').addEventListener('click',show);
+ el.querySelector('[data-u12-next]').addEventListener('click',()=>{situation.selectedIndex=(situation.selectedIndex+1)%situation.options.length;choice.selectedIndex=0;out.textContent='Make your choice, then check the explanation.';});
+ }
+ const list=document.querySelector('[data-u12-readiness]');
+ if(list){const box=list.querySelector('[data-u12-assessment]');const labels=Array.from(list.querySelectorAll('.u12-checks label'));
+ list.querySelector('[data-u12-assess]').addEventListener('click',()=>{const passed=labels.filter(x=>x.querySelector('input').checked).length;box.replaceChildren();let h=document.createElement('p');const b=document.createElement('strong');b.textContent=passed+' of '+labels.length+' publishing checks completed.';h.append(b);box.append(h);if(passed<labels.length){const p=document.createElement('p');p.textContent='Review these areas before a public release:';box.append(p);const ul=document.createElement('ul');labels.filter(x=>!x.querySelector('input').checked).forEach(x=>{const li=document.createElement('li');li.textContent=x.textContent.trim();ul.append(li);});box.append(ul);}else{const p=document.createElement('p');p.textContent='These seven classroom checks are complete. A real institution may need additional technical, legal and security approvals.';box.append(p);}});
+ list.querySelector('[data-u12-clear]').addEventListener('click',()=>{labels.forEach(x=>x.querySelector('input').checked=false);box.textContent='Check each area, then review the result.';});
+ }
+})();

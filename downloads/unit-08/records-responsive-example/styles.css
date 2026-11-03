@@ -1,0 +1,14 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f7f6; color: #1b3640; font-family: Arial, sans-serif; line-height: 1.55; }
+.wrapper { width: 100%; max-width: 1000px; margin: 0 auto; padding: 20px; }
+header { background: #155963; color: white; border-radius: 12px; padding: 24px; }
+header h1 { margin: 0 0 8px; }
+nav { display: flex; flex-wrap: wrap; gap: 14px; padding: 16px 0; }
+nav a { color: #0a6466; font-weight: bold; }
+.services { display: flex; flex-direction: column; gap: 16px; }
+.service-card { flex: 1; padding: 20px; border: 1px solid #aecbc7; border-radius: 10px; background: white; }
+.service-card h2 { margin: 0 0 8px; font-size: 1.25rem; }
+footer { padding: 20px 0; }
+@media (min-width: 720px) {
+  .services { flex-direction: row; }
+}

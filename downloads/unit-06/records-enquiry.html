@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public Records Enquiry</title>
+</head>
+<body>
+  <h1>Public Records Enquiry</h1>
+  <p>This practice form uses invented references only.</p>
+  <form action="#" method="get">
+    <p><label for="ref">Public reference code</label><br>
+    <input id="ref" name="reference" type="text" placeholder="DEMO-101" required></p>
+    <p><label for="category">Enquiry category</label><br>
+    <select id="category" name="category" required>
+      <option value="">Choose a category</option>
+      <option value="reports">Public reports</option>
+      <option value="policies">Published policies</option>
+      <option value="guides">Service guides</option>
+    </select></p>
+    <p><label for="details">Question</label><br>
+    <textarea id="details" name="details" rows="4" required></textarea></p>
+    <p><label><input type="checkbox" name="sample" required>
+      I have used fictional information.</label></p>
+    <button type="submit">Send enquiry</button>
+  </form>
+<p><small>Practice example: form submissions are not processed or stored.</small></p>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/* Unit 7: edit these rules to change the page appearance. */
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; color: #223741; background-color: #f4f8f7; }
+header { background-color: #164c58; color: #ffffff; padding: 24px 7%; }
+header h1 { margin: 0 0 8px; font-size: 2rem; }
+nav a { color: #ffffff; margin-right: 18px; }
+main { max-width: 880px; margin: 26px auto; padding: 0 18px; }
+.service-card { background-color: #ffffff; border: 1px solid #bdd7d1; border-radius: 10px; padding: 18px; margin-bottom: 18px; }
+.service-card h2 { color: #176b69; margin-top: 0; }
+a { color: #126f70; }
+.notice { background-color: #fff0c8; padding: 14px; border-left: 4px solid #bf8a29; }
+footer { text-align: center; padding: 22px; color: #526b70; }

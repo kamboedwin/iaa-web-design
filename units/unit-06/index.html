@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Beginner-friendly web design for Library and Information Studies and Records Management Systems." name="description"/><meta content="#102e3a" name="theme-color"/><link href="../../assets/img/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../../assets/css/style.css" rel="stylesheet"/><title>Unit 6: HTML Forms | IIA Web Design</title></head><body><a class="skip" href="#main">Skip to main content</a><div class="topbar"><div class="container"><span>IIA • Web Design</span><span>Library &amp; Information Studies | Records Management Systems</span></div></div><header class="header"><div class="container header-inner"><a class="brand" href="../../index.html"><span aria-hidden="true" class="brand-mark">W</span><span>Web Design<small>IIA • Undergraduate course</small></span></a><button aria-controls="main-nav" aria-expanded="false" class="mobile-toggle" data-menu-toggle="">Menu</button><nav aria-label="Main navigation" class="nav" data-main-nav="" id="main-nav"><a href="../../index.html">Home</a><a aria-current="page" href="../../units/index.html">Units</a><a href="../../practicals/index.html">Practicals</a><a href="../../assignments/index.html">Assignments</a><a href="../../resources/index.html">Resources</a></nav></div></header><main id="main"><section class="page-hero"><div class="container">
+<div class="breadcrumbs"><a href="../../index.html">Home</a> / <a href="../index.html">Units</a> / Unit 6</div>
+<div class="eyebrow">UNIT 06 • HTML FOUNDATIONS</div><h1>HTML Forms</h1>
+<p>Create clear, accessible forms for library requests and public records enquiries, using the right inputs, choices and basic validation.</p>
+<p aria-label="Unit information" class="unit-facts">At a glance: Level: Beginner  ·  Practice: Live form editor  ·  Knowledge check: Scored shuffled quiz</p>
+<div class="unit-actions no-print"><button class="btn btn-soft" data-print="" type="button">Print / Save as PDF</button>
+<a class="btn btn-soft" download="" href="../../downloads/unit-06/unit-06-slides.pdf">Download slides (PDF) ↓</a>
+<a class="btn btn-soft" href="../../downloads/unit-06/unit-06-practical-worksheet.html">Worksheet ↓</a></div></div></section>
+<div class="container course-layout"><aside aria-label="Unit contents" class="sidebar no-print">
+<h2>In this unit</h2><nav aria-label="Lesson sections"><a href="#overview">Learning outcomes</a><a href="#slides">Lecture slides</a><a href="#purpose">What is an HTML form?</a><a href="#structure">The form element</a><a href="#labels">Labels, id and name</a><a href="#text">Text and contact fields</a><a href="#choices">Radio, checkbox and select</a><a href="#grouping">Groups and accessible forms</a><a href="#validation">Basic browser validation</a><a href="#methods">GET, POST and data handling</a><a href="#examples">Library and records forms</a><a href="#lab">Live HTML form editor</a><a href="#challenge">Practice enquiry form</a><a href="#practical">Guided practical</a><a href="#selfcheck">Self-check quiz</a><a href="#assignment">Assignment 6</a><a href="#summary">Summary</a></nav>
+<div class="mini-action"><strong>Unit 6 progress</strong><div data-progress-text="">0 of 5 tasks completed</div>
+<div class="progress-track"><div class="progress-fill" data-progress-bar=""></div></div>
+<p class="micro">Saved only in this browser.</p></div></aside><article class="lesson"><section class="lesson-section" id="overview"><div class="eyebrow">01 / Learning to collect user input</div><h2>What you will learn</h2>
+<p>Forms enable visitors to enter information into a webpage. A library might offer a book-request form; a records office might let visitors enquire about a published record or request guidance on access procedures. A form is the visible interface through which a user provides information.</p>
+<p>After studying this unit, you should be able to:</p>
+<ol><li>Describe what a form does and identify when it is appropriate.</li><li>Create a form with meaningful <code>label</code>, <code>input</code>, <code>textarea</code>, <code>select</code> and <code>button</code> elements.</li><li>Choose suitable types of input and group related choices.</li><li>Use basic browser validation, including <code>required</code>.</li><li>Explain the difference between the visible HTML interface and server-side processing.</li><li>Create a simple form for a fictional library or records centre.</li></ol>
+<div class="note blue"><strong>Connection to Unit 5:</strong> tables display existing structured information; forms allow a user to enter or choose information. A real system may combine both, but an HTML form alone is not a database.</div>
+<label class="page-counter"><input data-task="u6-outcomes" type="checkbox"/> I can explain the difference between a table and a form.</label></section>
+<section class="lesson-section" id="slides"><div class="eyebrow">02 / Read the examples</div><h2>Unit 6 — Lecture slides</h2><p>The 32-page presentation can be read below. Use the PDF viewer to navigate between pages, or open the PDF separately for easier viewing on a small screen.</p>
+<div class="pdf-slide-viewer"><div class="pdf-slide-header"><strong>Unit 6 lecture presentation · 32 pages</strong><a class="pdf-open-link" href="../../downloads/unit-06/unit-06-slides.pdf" rel="noopener noreferrer" target="_blank">Open PDF in a new tab ↗</a></div><iframe class="pdf-slide-frame" loading="lazy" src="../../downloads/unit-06/unit-06-slides.pdf" title="Unit 6 lecture slides (PDF)">Unit 6 PDF presentation</iframe><p class="pdf-slide-help">If the presentation does not display on your device, <a href="../../downloads/unit-06/unit-06-slides.pdf">open the PDF directly</a> or download it below.</p></div>
+<p class="micro"><a download="" href="../../downloads/unit-06/unit-06-slides.pdf">Download lecture slides (PDF) ↓</a></p></section>
+<section class="lesson-section" id="purpose"><div class="eyebrow">03 / Understand the purpose</div><h2>What is an HTML form?</h2>
+<p>An <strong>HTML form</strong> is a collection of controls—such as text boxes, radio buttons and a Submit button—that allows users to provide information. A form should request only information needed for a clear task.</p>
+<div class="grid-2"><div class="card"><h3>Library example</h3><p>A visitor enters a book title, chooses a collection point and supplies contact details to request assistance.</p></div><div class="card"><h3>Records-management example</h3><p>A visitor chooses a public record category, enters a fictional reference and describes an enquiry.</p></div></div>
+<p>When designing a form, begin with the user's purpose: What does the visitor need to accomplish? Which fields are necessary? What will happen after the form is submitted?</p>
+<p><strong>Important distinction:</strong> the controls can be displayed using HTML alone. Saving, emailing, checking permissions or retrieving records normally requires processing beyond HTML, such as a server, authorised service or database.</p>
+</section>
+<section class="lesson-section" id="structure"><div class="eyebrow">04 / The outer form</div><h2>The <code>&lt;form&gt;</code> element</h2>
+<p>The <code>&lt;form&gt;</code> element groups the controls to be submitted. Its <code>action</code> attribute identifies a destination, while <code>method</code> specifies how the browser sends form data, commonly <code>get</code> or <code>post</code>.</p>
+<pre><code>&lt;form action="/requests" method="post"&gt;
+  &lt;label for="book"&gt;Book title&lt;/label&gt;
+  &lt;input type="text" id="book" name="book" required&gt;
+  &lt;button type="submit"&gt;Send request&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p>In this example, <code>/requests</code> represents a server endpoint. It is <strong>not</strong> automatically created by HTML. Without an appropriate processing service, the form cannot complete a real booking or request.</p>
+<div class="note"><strong>Read the code:</strong> the opening form tag starts the group; the label identifies the field; the input receives text; the button submits; and <code>&lt;/form&gt;</code> closes the group.</div>
+</section>
+<section class="lesson-section" id="labels"><div class="eyebrow">05 / Accessible descriptions</div><h2>Labels, <code>id</code> and <code>name</code></h2>
+<p>Every input needs a meaningful description. The <code>&lt;label&gt;</code> element tells users what to enter, and a correctly linked label makes a control easier to use with a mouse, touch screen or assistive technology.</p>
+<pre><code>&lt;label for="ref"&gt;Public reference code&lt;/label&gt;
+&lt;input id="ref" name="reference" type="text"&gt;</code></pre>
+<ul><li><code>for="ref"</code> identifies the control whose <code>id</code> is <code>ref</code>.</li><li><code>id</code> should be unique within the webpage.</li><li><code>name="reference"</code> is the key used when the form data is submitted.</li><li>A <code>placeholder</code> is a hint, not a replacement for a visible label.</li></ul>
+<div class="note blue"><strong>Try it:</strong> click a label in the live editor. With a correctly associated <code>for</code> and <code>id</code>, the labelled control receives focus.</div>
+</section>
+<section class="lesson-section" id="text"><div class="eyebrow">06 / Choose the correct field</div><h2>Text, email, telephone and longer answers</h2>
+<p>Different <code>type</code> values tell the browser what kind of entry is expected. The browser may offer an appropriate keyboard on a mobile phone or apply basic input checks.</p>
+<div class="table-wrap"><table><thead><tr><th>Element</th><th>Typical use</th><th>Example</th></tr></thead><tbody>
+<tr><td><code>type="text"</code></td><td>Short general text</td><td>Book title or public reference</td></tr>
+<tr><td><code>type="email"</code></td><td>Email address format</td><td>Contact email</td></tr>
+<tr><td><code>type="tel"</code></td><td>Telephone number entry</td><td>Contact phone</td></tr>
+<tr><td><code>type="date"</code></td><td>Date selection</td><td>Preferred visit date</td></tr>
+<tr><td><code>type="number"</code></td><td>Numeric quantity</td><td>Number of copies requested</td></tr>
+<tr><td><code>&lt;textarea&gt;</code></td><td>Several lines of text</td><td>Additional information about an enquiry</td></tr>
+</tbody></table></div>
+<pre><code>&lt;label for="email"&gt;Email address&lt;/label&gt;
+&lt;input type="email" id="email" name="email" required&gt;
+
+&lt;label for="message"&gt;Enquiry details&lt;/label&gt;
+&lt;textarea id="message" name="message" rows="4"&gt;&lt;/textarea&gt;</code></pre>
+<p>Use the input type that matches the <strong>meaning</strong> of the information. For example, a telephone number can begin with a zero or plus sign, so <code>type="tel"</code> is more appropriate than <code>type="number"</code>.</p>
+</section>
+<section class="lesson-section" id="choices"><div class="eyebrow">07 / Allow visitors to choose</div><h2>Radio buttons, checkboxes and dropdowns</h2>
+<p>When the possible answers are known, provide clear choices instead of making visitors type everything.</p>
+<div class="grid-2"><div class="card"><h3>Radio buttons: choose one</h3><p>Radio buttons use the <strong>same name</strong> to form one group. Useful for selecting one collection point or preferred contact method.</p></div><div class="card"><h3>Checkboxes: select independently</h3><p>A checkbox can represent an agreement or an independent choice. Multiple checkboxes can be checked unless the page adds another rule.</p></div></div>
+<pre><code>&lt;p&gt;Collection point&lt;/p&gt;
+&lt;label&gt;&lt;input type="radio" name="point" value="main" checked&gt;
+  Main library&lt;/label&gt;
+&lt;label&gt;&lt;input type="radio" name="point" value="branch"&gt;
+  Branch library&lt;/label&gt;
+
+&lt;label&gt;&lt;input type="checkbox" name="updates"&gt;
+  Send me general service updates&lt;/label&gt;</code></pre>
+<p>A <code>&lt;select&gt;</code> creates a dropdown containing <code>&lt;option&gt;</code> choices:</p>
+<pre><code>&lt;label for="category"&gt;Public record category&lt;/label&gt;
+&lt;select id="category" name="category" required&gt;
+  &lt;option value=""&gt;Choose one&lt;/option&gt;
+  &lt;option value="reports"&gt;Annual reports&lt;/option&gt;
+  &lt;option value="guides"&gt;Service guides&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+<p>An initial option with an empty value, together with <code>required</code>, encourages visitors to make a deliberate selection.</p>
+</section>
+<section class="lesson-section" id="grouping"><div class="eyebrow">08 / Make forms understandable</div><h2><code>fieldset</code> and <code>legend</code></h2>
+<p>Related controls, especially radio buttons and checkboxes, are easier to understand when grouped together. A <code>&lt;fieldset&gt;</code> contains the group, and a <code>&lt;legend&gt;</code> gives that group a meaningful heading.</p>
+<pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;How should we contact you?&lt;/legend&gt;
+  &lt;label&gt;&lt;input type="radio" name="contact" value="email"&gt;
+    Email&lt;/label&gt;
+  &lt;label&gt;&lt;input type="radio" name="contact" value="phone"&gt;
+    Phone&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+<p>Good forms follow the same usability principles studied in Unit 2: descriptive text, logical order, minimal unnecessary fields, sensible spacing and clear action buttons.</p>
+</section>
+<section class="lesson-section" id="validation"><div class="eyebrow">09 / Check entries before processing</div><h2>Basic HTML form validation</h2>
+<p>HTML provides simple <strong>browser-side validation</strong>. For example, <code>required</code> can stop an empty field from being submitted; <code>type="email"</code> checks basic email-address format; and <code>minlength</code>, <code>maxlength</code>, <code>min</code> and <code>max</code> can express other limits.</p>
+<pre><code>&lt;label for="title"&gt;Book title&lt;/label&gt;
+&lt;input id="title" name="title" type="text"
+       required minlength="3" maxlength="80"&gt;
+
+&lt;label for="copies"&gt;Number of copies&lt;/label&gt;
+&lt;input id="copies" name="copies" type="number"
+       min="1" max="3" value="1"&gt;</code></pre>
+<p><strong>Example:</strong> if the book title is blank, the browser can ask the visitor to complete it. If an email field contains an invalid address format, the browser can ask for correction.</p>
+<div class="note warning"><strong>Limit:</strong> browser validation does not establish whether an email is real, whether a record exists or whether a person is authorised to access information. Real services must check submitted data and access rights on the server as well.</div>
+</section>
+<section class="lesson-section" id="methods"><div class="eyebrow">10 / Understand what happens next</div><h2>GET, POST, submission and privacy</h2>
+<p>A form usually sends data to a processing destination. Two common HTTP methods are:</p>
+<div class="grid-2"><div class="card"><h3>GET</h3><p>Appends submitted values to the URL as a query string. Suitable for public searches, such as looking up a book by keyword. Values may appear in browser history or logs.</p></div><div class="card"><h3>POST</h3><p>Sends submitted values in the HTTP request body instead of the URL query string. Used for operations such as submitting a service request. POST alone does not provide encryption.</p></div></div>
+<pre><code>&lt;!-- Public search: results can be represented in a URL --&gt;
+&lt;form action="/catalogue/search" method="get"&gt;
+  &lt;label for="q"&gt;Search books&lt;/label&gt;
+  &lt;input id="q" name="q" type="search"&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p>For sensitive information, a real system should use HTTPS, server-side validation, appropriate authentication and access control. Do not put confidential records or personal identifiers into a publicly accessible exercise or URL.</p>
+<p>Use <code>&lt;button type="submit"&gt;</code> to submit a form and <code>&lt;button type="button"&gt;</code> for an action that should not submit it. A reset button returns controls to their initial values, but may erase work unexpectedly; use it only when it is genuinely helpful.</p>
+</section>
+<section class="lesson-section" id="examples"><div class="eyebrow">11 / Professional applications</div><h2>Library and records-management forms</h2>
+<p>The following examples illustrate appropriate controls for two related tasks. Both use fictional information.</p>
+<div class="grid-2"><article class="card"><h3>Example A — Library</h3><p>A book-request form may ask for a title, contact email, preferred collection point and optional note. A real system would need to check the book and process the request.</p><p><a href="../../downloads/unit-06/library-request.html" rel="noopener noreferrer" target="_blank">Open the library example ↗</a></p></article><article class="card"><h3>Example B — Records centre</h3><p>A public-records enquiry may ask for a reference code, public category and question. It must not expose confidential files or assume everyone may access every record.</p><p><a href="../../downloads/unit-06/records-enquiry.html" rel="noopener noreferrer" target="_blank">Open the records example ↗</a></p></article></div>
+<h3>Short comparison</h3><div class="table-wrap"><table><thead><tr><th>Feature</th><th>Library form</th><th>Records form</th></tr></thead><tbody><tr><td>Text field</td><td>Book title</td><td>Public reference code</td></tr><tr><td>Choice</td><td>Collection point</td><td>Public record category</td></tr><tr><td>Long answer</td><td>Optional message</td><td>Enquiry details</td></tr><tr><td>Server responsibility</td><td>Confirm book/request</td><td>Check policy and access rights</td></tr></tbody></table></div>
+</section>
+<section class="lesson-section" id="lab"><div class="eyebrow">12 / Experiment with the markup</div><h2>Live HTML form editor</h2>
+<p>Select an example, edit its HTML and inspect how the form appears. Change a label, add an option or mark a field as <code>required</code>. Try leaving a required field blank to see the browser's response.</p>
+<p>The preview is for <strong>learning form structure</strong>; it does not send requests to a library or records office. A real service would require a suitable processing system.</p>
+<div class="lab-controls"><label for="u6-example">Choose an example</label><select id="u6-example"><option value="library">Library book request</option><option value="records">Public records enquiry</option></select><button class="btn btn-soft" data-u6-reset="" type="button">Restore example</button><button class="btn btn-primary" data-u6-render="" type="button">Update preview</button><button class="btn btn-soft" data-u6-download="" type="button">Download HTML</button></div>
+<div class="grid-2"><div><label for="u6-editor"><strong>Edit the HTML</strong></label><textarea aria-label="HTML form code" class="code-editor" id="u6-editor" rows="19" spellcheck="false"></textarea></div><div><p><strong>Browser preview</strong></p><iframe data-u6-frame="" referrerpolicy="no-referrer" sandbox="" style="width:100%;height:440px;border:1px solid #cad9d6;border-radius:12px;background:#fff" title="Live HTML form preview"></iframe><p aria-live="polite" class="micro" data-u6-status="">Choose an example and update the preview.</p></div></div>
+<label class="page-counter"><input data-task="u6-lab" type="checkbox"/> I have edited at least one label or form field and updated the preview.</label></section>
+<section class="lesson-section" id="challenge"><div class="eyebrow">13 / Apply the idea</div><h2>Interactive form-choice challenge</h2>
+<p>A visitor wants to choose <strong>exactly one</strong> preferred contact method from Email, Telephone and Reception desk. Which HTML control best fits this task?</p>
+<div class="figure" data-u6-challenge="">
+<div class="path-choices"><label><input name="u6-choice" type="radio" value="checkbox"/> Three independent checkboxes</label><label><input name="u6-choice" type="radio" value="radio"/> Radio buttons with the same <code>name</code></label><label><input name="u6-choice" type="radio" value="textarea"/> One long <code>textarea</code></label></div>
+<div class="actions"><button class="btn btn-primary" data-u6-check="" type="button">Check my answer</button><button class="btn btn-soft" data-u6-try="" type="button">Try again</button></div><p aria-live="polite" class="status-box" data-u6-feedback="" role="status">Select the most suitable control and check your answer.</p></div>
+<p>A form is easier to complete when its controls match the type of answer expected.</p>
+</section>
+<section class="lesson-section" id="practical"><div class="eyebrow">14 / Create a working interface</div><h2>Practical: build a short service form</h2>
+<p><strong>Suggested activity:</strong> 25–35 minutes.</p><ol><li>Choose the library or records-centre example.</li><li>Open the starter HTML file in a text editor.</li><li>Change the heading and add a brief instruction for visitors.</li><li>Keep two labelled fields, at least one choice control, and a Submit button.</li><li>Add <code>required</code> to one important input and test the browser's response to an empty value.</li><li>Save the file and open it in a browser.</li></ol>
+<div class="actions"><a class="btn btn-primary" download="" href="../../downloads/unit-06/unit-06-form-starters.zip">Download starter forms ↓</a><a class="btn btn-soft" href="../../downloads/unit-06/unit-06-practical-worksheet.html">Open printable worksheet ↗</a></div>
+<div class="note warning"><strong>Use invented details:</strong> do not submit real student identifiers, borrower details, confidential references or personal data in a classroom practice form.</div>
+<label class="page-counter"><input data-task="u6-practical" type="checkbox"/> I have created a form with visible labels and tested a required field.</label></section>
+<section class="lesson-section" id="selfcheck"><div class="eyebrow">15 / Check your understanding</div><h2>Unit 6 self-check quiz</h2>
+<p>Each attempt contains <strong>eight questions</strong> chosen from a larger question bank. The questions and answer choices are shuffled. After submission, your score and explanations for incorrect or unanswered responses appear below the questions.</p>
+<div class="quiz-shell" data-quiz="unit6"><div class="quiz-intro"><span data-quiz-status="">Attempt 1 • 8 questions</span><span data-quiz-progress="">0 of 8 answered</span></div><form data-quiz-form=""><div data-quiz-questions=""></div><div class="actions no-print"><button class="btn btn-primary" type="submit">Submit quiz and see score</button><button class="btn btn-soft" data-quiz-new="" type="button">New shuffled attempt</button></div></form><div aria-live="polite" class="quiz-result" data-quiz-result="" role="status"></div><p class="micro">This is a practice score for your own revision.</p></div>
+<label class="page-counter"><input data-task="u6-quiz" type="checkbox"/> I have submitted a quiz attempt and reviewed any incorrect answers.</label></section>
+<section class="lesson-section" id="assignment"><div class="eyebrow">16 / Short independent task</div><h2>Assignment 6 — Create one simple form</h2>
+<p>Create <strong>one HTML webpage</strong> containing a basic form for a fictional library or records centre.</p>
+<ol><li>Include a meaningful heading and one sentence explaining the form.</li><li>Add <strong>two labelled input fields</strong> (for example, request title and contact email).</li><li>Add <strong>one choice control</strong> (radio buttons, a checkbox or a dropdown).</li><li>Add a Submit button and mark at least one field as <code>required</code>.</li><li>Open the page in a browser and take one screenshot showing your form.</li></ol>
+<p><strong>Prepare:</strong> your HTML file and one screenshot. This assignment assesses the form interface; you are <strong>not</strong> required to create a database or send real requests.</p>
+<p class="micro">Use fictional values. Submission instructions and deadlines will be announced separately.</p>
+</section>
+<section class="lesson-section" id="summary"><div class="eyebrow">17 / Review the essentials</div><h2>Unit 6 summary</h2>
+<ul><li>HTML forms allow visitors to enter data and choose options.</li><li><code>&lt;form&gt;</code> groups the controls; <code>action</code> and <code>method</code> describe submission.</li><li>Labels, unique IDs and meaningful names make fields understandable and usable.</li><li>Use <code>textarea</code> for longer text, radio buttons for one choice, checkboxes for independent choices and dropdowns for predefined options.</li><li><code>fieldset</code> and <code>legend</code> describe groups of controls.</li><li><code>required</code> and input types help with basic browser checks but do not replace server validation.</li><li>HTML does not by itself store or authorise access to submitted records.</li><li>Requests for personal or confidential information require responsible data handling and appropriate security controls.</li></ul>
+<p><strong>Next unit:</strong> Introduction to CSS — using styles to improve the appearance and readability of webpages.</p>
+<label class="page-counter"><input data-task="u6-review" type="checkbox"/> I can explain the main form elements and create a simple labelled form.</label>
+<div class="unit-actions no-print"><a class="btn btn-soft" href="../unit-05/index.html">← Unit 5</a><a class="btn btn-primary" href="../index.html">All course units →</a></div>
+<p class="micro">Further reading: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" rel="noopener noreferrer" target="_blank">MDN — Web forms</a>; <a href="https://www.w3schools.com/html/html_forms.asp" rel="noopener noreferrer" target="_blank">W3Schools — HTML Forms</a>; <a href="https://www.w3.org/WAI/tutorials/forms/" rel="noopener noreferrer" target="_blank">W3C — Forms accessibility</a>.</p>
+</section></article></div></main><footer class="footer"><div class="container"><div><strong>IIA Web Design</strong><p>One shared learning space. Two professional applications.</p><p class="small">Student learning resources</p></div><div><p><a href="../../units/index.html">All course units</a> · <a href="../../resources/index.html">Resources</a></p><p class="small">All practical examples use fictional information. Protect personal and restricted records.</p></div></div></footer><script defer="True" src="../../assets/js/main.js"></script><script defer="True" src="../../assets/js/unit6.js"></script><script defer="True" src="../../assets/js/quiz-engine.js"></script></body></html>
